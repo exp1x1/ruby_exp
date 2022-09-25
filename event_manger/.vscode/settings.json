@@ -1,3 +1,4 @@
 {
-  "ruby.rubocop.useBundler": true
+  "ruby.rubocop.useBundler": true,
+  "ruby.rubocop.onSave": false
 }
