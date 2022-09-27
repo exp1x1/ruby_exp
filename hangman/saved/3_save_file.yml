@@ -1,0 +1,30 @@
+--- !ruby/object:HangMan
+game_saved: false
+wrong_point: 9
+word: franchise
+word_array:
+- f
+- r
+- a
+- "n"
+- c
+- h
+- i
+- s
+- e
+show_array:
+- f
+- r
+- _
+- _
+- c
+- _
+- _
+- _
+- _
+same_word:
+- f
+- r
+- c
+- w
+current_word: w

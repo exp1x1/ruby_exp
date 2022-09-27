@@ -1,11 +1,13 @@
 # frozen_string_literal: true
-require './save_game.rb'
+
+require './save_game'
 # class HangMan
 class HangMan
   attr_reader :word, :word_array
   attr_accessor :wrong_point, :show_array, :current_word, :same_word, :game_saved
 
   extend Save
+  include Load
 
   def initialize
     @game_saved = false
@@ -22,6 +24,7 @@ class HangMan
       @current_word = take_input_char
       result_arr = check_input_with_word
       break if game_saved == true
+
       check_same_word(current_word)
       reduce_wrong_point(result_arr)
       show_wrong_point
@@ -36,7 +39,7 @@ class HangMan
       puts 'error , enter only one char[a-z]' unless result.length == 1
     end
     if result == '1'
-      save_game(self) 
+      save_game(self)
       @game_saved = true
     end
     result
@@ -45,7 +48,7 @@ class HangMan
   def save_game(obj)
     Save.create_dir
     file_name = Save.make_save_file(obj)
-    print "you save your game in #{file_name}" 
+    print "you save your game in #{file_name}"
   end
 
   def check_same_word(char)
@@ -100,6 +103,7 @@ class HangMan
   def check_input_with_word(arr = word_array)
     arr.each_index.select { |i| arr[i] == current_word }
   end
+
 end
 
 game = HangMan.new

@@ -1,0 +1,28 @@
+--- !ruby/object:HangMan
+game_saved: false
+wrong_point: 6
+word: benjamin
+word_array:
+- b
+- e
+- "n"
+- j
+- a
+- m
+- i
+- "n"
+show_array:
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+same_word:
+- f
+- r
+- Q
+- g
+current_word: g
